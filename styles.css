@@ -1,0 +1,51 @@
+body {
+    background-image: url('rpsbg.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* enter ur name popup */
+#popup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* game */
+.game {
+    background-color: #2D1151;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.players {
+    display: flex;
+    margin-top: 20px;
+}
+
+.player-box {
+    flex: 1;
+    background-color: #5e2b97;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.titlefont {
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
