@@ -1,6 +1,6 @@
 const startBtn = document.getElementById("startBtn");
 const nameInput = document.getElementById("nameInput");
-const player1 = document.getElementById("player1");
+const playerName = document.getElementById("player1-name"); // target the name only
 const popup = document.getElementById("popup-overlay");
 
 startBtn.addEventListener("click", startGame);
@@ -8,9 +8,9 @@ startBtn.addEventListener("click", startGame);
 function startGame() {
     const name = nameInput.value.trim();
     if (name !== "") {
-        player1.textContent = name;
+        playerName.textContent = name; // only change the name
     } else {
-        player1.textContent = "Player 1";
+        playerName.textContent = "Player 1";
     }
-    popup.style.display = "none";
+    popup.style.display = "none"; // hide popup
 }

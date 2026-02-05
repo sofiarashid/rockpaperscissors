@@ -22,13 +22,76 @@
 
     <div class="game m-5">
         <div class="title">
-            <h1 class="titlefont">Rock Paper Scissors</h1>
+            <h1 class="titlefont">Rock Paper Scissors Game</h1>
         </div>
 
         <div class="players">
-            <div class="player-box" id="player1">Player 1</div>
-            <div class="player-box">Computer</div>
+
+            <!-- PLAYER 1 -->
+            <div class="player-box" id="player1">
+                <div class="player-name" id="player1-name">Player 1</div>
+
+
+                <!-- Progress Bar -->
+                <div class="progress-bar" id="player-progress">
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                </div>
+
+                <!-- PLAYER 1 -->
+                <div class="player-image">
+                    <button onclick="playerMove('rock')">ROCK</button>
+                    <button onclick="playerMove('paper')">PAPER</button>
+                    <button onclick="playerMove('scissors')">SCISSORS</button>
+                </div>
+
+                <!-- Add placeholder for selected move -->
+                <img src="rock.png" alt="Player Move" class="player-move" id="player1-move">
+                
+                <!-- COMPUTER -->
+                <div class="player-image computer-image">
+                    <img src="computer.png" alt="img">
+                </div>
+
+                <!-- Add placeholder for computer move -->
+                <img src="rock.png" alt="Computer Move" class="player-move" id="computer-move">
+
+
+                <!-- Winner Banner -->
+                <div class="winner-banner" id="player-wins">
+                    _____ wins!
+                </div>
+            </div>
+
+            <!-- COMPUTER -->
+            <div class="player-box" id="computer">
+                Computer
+
+                <!-- Progress Bar -->
+                <div class="progress-bar" id="computer-progress">
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                    <div class="checkpoint"></div>
+                </div>
+
+                <!-- Computer Image Area -->
+                <div class="player-image computer-image">
+                    <img src="computer.png" alt="img">
+                </div>
+
+                <!-- Winner Banner -->
+                <div class="winner-banner" id="computer-wins">
+                    _____ wins!
+                </div>
+            </div>
+
         </div>
+
     </div>
 
     <script src="script.js"></script>
