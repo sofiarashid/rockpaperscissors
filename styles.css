@@ -152,14 +152,14 @@ body {
     justify-content: space-between;
     margin: 15px 0;
     padding: 10px;
-    background-color: #e2e1e3;
+    background-color: #fcf9ff;
     border-radius: 12px;
 }
 
 .checkpoint {
     width: 18%;
     height: 14px;
-    background-color: #a49aad;
+    background-color: #3c0f6f4b;
     border-radius: 8px;
 }
 
