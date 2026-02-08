@@ -250,16 +250,18 @@ body {
 }
 /* ===== RESULT / WINNER BAR ===== */
 #resultBox {
-    margin-top: 25px;
-    padding: 18px;
+    margin-top: 20px;
+    padding: 15px;
     width: 100%;
+    box-sizing: border-box;
     background-color: #FFE600;
     color: #3B0F6F;
     border-radius: 15px;
     text-align: center;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
     border: 3px solid #3B0F6F;
     box-shadow: 0 0 10px #FFE600;
+    overflow-wrap: break-word;
 }

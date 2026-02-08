@@ -43,10 +43,9 @@ function startGame() {
     document.getElementById("paperBtn").disabled = false;
     document.getElementById("scissorsBtn").disabled = false;
     document.getElementById("resetBtn").style.display= "none";
+
+    updateProgressBars();
 }
-
-
-
 
 
 
@@ -74,7 +73,7 @@ function playRound(userChoice) {
             resultBox.textContent = "Computer wins! Paper beats Rock.";
         }
     }
-
+    
     //user is paper //
     else if (userChoice === "paper") {
         if (computerChoice === "rock") {
@@ -97,11 +96,16 @@ function playRound(userChoice) {
         }
     }
 
+    updateProgressBars();
+
     // says round number and ends game after 5 rounds //
     roundNumber = roundNumber + 1;
     if (roundNumber <= 5) {resultBox.textContent = resultBox.textContent + " | Round " + roundNumber + " of 5";}
     if (roundNumber > 5) {endGame();}
 }
+
+
+
 
 // end the game - you won or computer won //
 function endGame() {
@@ -118,4 +122,21 @@ function endGame() {
             "Final Score: " + playerName.textContent + " " + userWins +
             ", Computer " + computerWins + ". It's a tie!";
     }
+}
+
+
+
+
+function updateProgressBars() {
+    const playerCheckpoints = document.querySelectorAll(".player-box:first-child .checkpoint");
+    const computerCheckpoints = document.querySelectorAll(".player-box:last-child .checkpoint");
+
+    // if player wins 1st round, checkpoint becomes active, if true progress bar turns gold //
+    playerCheckpoints.forEach((cp, i) => {
+        cp.classList.toggle("active", i < userWins);
+    });
+    // same thing for computer //
+    computerCheckpoints.forEach((cp, i) => {
+        cp.classList.toggle("active", i < computerWins);
+    });
 }
