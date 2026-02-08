@@ -41,9 +41,9 @@
                 </div>
 
                 <div class="player-image">
-                    <button onclick="playRound('rock')">ROCK</button>
-                    <button onclick="playRound('paper')">PAPER</button>
-                    <button onclick="playRound('scissors')">SCISSORS</button>
+                    <button class="choice-btn" onclick="playRound('rock')">ROCK</button>
+                    <button class="choice-btn" onclick="playRound('paper')">PAPER</button>
+                    <button class="choice-btn" onclick="playRound('scissors')">SCISSORS</button>
                 </div>
 
                 <img src="rock1.png" class="player-move" id="player1-move">
@@ -67,6 +67,7 @@
         </div>
 
         <div id="resultBox">Make your choice!</div>
+        <button id="resetBtn" style="display:none;">Reset Game</button>
 
     </div>
 
