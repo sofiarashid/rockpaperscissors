@@ -34,8 +34,8 @@ function startGame() {
     roundNumber=1;
     userWins=0;
     computerWins=0;
-    playerMoveImg.src="";
-    computerMoveImg.src="";
+    playerMoveImg.src="rock1.png";
+    computerMoveImg.src="rock2.png";
     resultBox.textContent = "Make your choice!";
 
     // make each button work again + hide reset button //
@@ -51,59 +51,76 @@ function startGame() {
 
 
 function playRound(userChoice) {
-
-    if (roundNumber > 5) {return;}
+    if (roundNumber > 5) { return; }
     let computerNumber = Math.floor(Math.random() * 3);
     let computerChoice = choices[computerNumber];
 
-    playerMoveImg.src = userChoice + "1.png";
-    computerMoveImg.src = computerChoice + "2.png";
+    // default images before shake
+    playerMoveImg.src = "rock1.png";
+    computerMoveImg.src = "rock2.png";
 
-    // tie //
-    if (userChoice === computerChoice) {
-        resultBox.textContent = "Tie! You both chose " + userChoice + ".";
-    }
-    //user is rock //
-    else if (userChoice === "rock") {
-        if (computerChoice === "scissors") {
-            userWins = userWins + 1;
-            resultBox.textContent = "You win! Rock beats Scissors.";
-        } else {
-            computerWins = computerWins + 1;
-            resultBox.textContent = "Computer wins! Paper beats Rock.";
-        }
-    }
-    
-    //user is paper //
-    else if (userChoice === "paper") {
-        if (computerChoice === "rock") {
-            userWins = userWins + 1;
-            resultBox.textContent = "You win! Paper beats Rock.";
-        } else {
-            computerWins = computerWins + 1;
-            resultBox.textContent = "Computer wins! Scissors beats Paper.";
-        }
-    }
+    // player shake
+    playerMoveImg.classList.add("shake");
 
-    // user is scissors //
-    else if (userChoice === "scissors") {
-        if (computerChoice === "paper") {
-            userWins = userWins + 1;
-            resultBox.textContent = "You win! Scissors beats Paper.";
-        } else {
-            computerWins = computerWins + 1;
-            resultBox.textContent = "Computer wins! Rock beats Scissors.";
-        }
-    }
+    setTimeout(() => {
+        playerMoveImg.classList.remove("shake");
+        playerMoveImg.src = userChoice + "1.png";
 
-    updateProgressBars();
+        // computer shake after short delay to make them even
+        setTimeout(() => {
+            computerMoveImg.classList.add("shake");
 
-    // says round number and ends game after 5 rounds //
-    roundNumber = roundNumber + 1;
-    if (roundNumber <= 5) {resultBox.textContent = resultBox.textContent + " | Round " + roundNumber + " of 5";}
-    if (roundNumber > 5) {endGame();}
+            setTimeout(() => {
+                computerMoveImg.classList.remove("shake");
+                computerMoveImg.src = computerChoice + "2.png";
+
+                //tie
+                if (userChoice === computerChoice) {
+                    resultBox.textContent = `Tie! You both chose ${userChoice}.`;
+                } 
+                //user chooses rock
+                else if (userChoice === "rock") {
+                    if (computerChoice === "scissors") {
+                        userWins = userWins + 1;
+                        resultBox.textContent = "You win! Rock beats Scissors.";
+                    } else {
+                        computerWins = computerWins + 1;
+                        resultBox.textContent = "Computer wins! Paper beats Rock.";
+                    }
+                }
+                //user chooses paper
+                else if (userChoice === "paper") {
+                    if (computerChoice === "rock") {
+                        userWins = userWins + 1;
+                        resultBox.textContent = "You win! Paper beats Rock.";
+                    } else {
+                        computerWins = computerWins + 1;
+                        resultBox.textContent = "Computer wins! Scissors beats Paper.";
+                    }
+                }
+                //user chooses scissors
+                else if (userChoice === "scissors") {
+                    if (computerChoice === "paper") {
+                        userWins = userWins + 1;
+                        resultBox.textContent = "You win! Scissors beats Paper.";
+                    } else {
+                        computerWins = computerWins + 1;
+                        resultBox.textContent = "Computer wins! Rock beats Scissors.";
+                    }
+                }
+
+                updateProgressBars();
+
+                // round info
+                roundNumber = roundNumber + 1;
+                if (roundNumber <= 5) {
+                    resultBox.textContent = resultBox.textContent + " | Round " + roundNumber + " of 5";
+                } else {endGame();}
+
+            }, 400); // computer shake in milliseconds (0.4 sec)
+        }, 200); // delay before computer shake
+    }, 400); // player shake
 }
-
 
 
 
