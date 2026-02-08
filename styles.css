@@ -77,13 +77,9 @@ body {
     background: #2D1151;
     color: #FFD84D;
     border: 2px solid #FFD84D;
-
     padding: 18px 28px;
-    /* ⬅ bigger buttons */
-    font-size: 22px;
-    /* ⬅ bigger text */
+    font-size: 20px;
     border-radius: 14px;
-
     cursor: pointer;
     margin: 0 8px;
     font-weight: 700;
@@ -92,12 +88,11 @@ body {
 
 .player-image button:hover {
     transform: scale(1.08);
-    /* nice hover pop */
 }
 
 /* MOVE IMAGES */
 .player-move {
-    width: 75px;
+    width: 100px;
     margin-top: 15px;
 }
 
