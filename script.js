@@ -4,7 +4,6 @@ const playerName = document.getElementById("player1-name");
 const popup = document.getElementById("popup-overlay");
 
 const resetBtn = document.getElementById("resetBtn");
-const choiceBtns = document.querySelectorAll(".choice-btn");
 
 const playerMoveImg = document.getElementById("player1-move");
 const computerMoveImg = document.getElementById("computer-move");
@@ -14,7 +13,7 @@ const resultBox = document.getElementById("resultBox");
 let roundNumber = 1;
 let userWins = 0;
 let computerWins = 0;
-let choices = ["rock", "paper", "scissors"];
+const choices = ["rock", "paper", "scissors"];
 
 startBtn.addEventListener("click", startGame);
 resetBtn.addEventListener("click", resetGame);
@@ -22,46 +21,23 @@ resetBtn.addEventListener("click", resetGame);
 //popup - change name to name or leave as player1 if user doesnt put anything //
 function startGame() {
     const name = nameInput.value.trim();
-    if (name !== "") {
-        playerName.textContent = name;
-    } else {
-        playerName.textContent = "Player 1";
-    }
+    playerName.textContent = name !== "" ? name : "Player 1";
 
     popup.style.display = "none";
-
-    //reset game //
-    roundNumber=1;
-    userWins=0;
-    computerWins=0;
-    playerMoveImg.src="rock1.png";
-    computerMoveImg.src="rock2.png";
-    resultBox.textContent = "Make your choice! Round 1 of 5";
-
-    // make each button work again + hide reset button //
-    document.getElementById("rockBtn").disabled = false;
-    document.getElementById("paperBtn").disabled = false;
-    document.getElementById("scissorsBtn").disabled = false;
-    document.getElementById("resetBtn").style.display= "none";
-
-    updateProgressBars();
+    resetGame();
 }
-
-
-
 
 function playRound(userChoice) {
     if (roundNumber > 5) {
         resultBox.textContent = "Game over. Press Reset.";
         return;
     }
-    let computerNumber = Math.floor(Math.random() * 3);
-    let computerChoice = choices[computerNumber];
 
-    // default images before shake
+    // pick computer choice
+    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    // reset default images for shake
     playerMoveImg.src = "rock1.png";
     computerMoveImg.src = "rock2.png";
-
     // player shake
     playerMoveImg.classList.add("shake");
 
@@ -77,39 +53,23 @@ function playRound(userChoice) {
                 computerMoveImg.classList.remove("shake");
                 computerMoveImg.src = computerChoice + "2.png";
 
-                //tie
+                // tie
                 if (userChoice === computerChoice) {
                     resultBox.textContent = `Tie! You both chose ${userChoice}.`;
-                } 
-                //user chooses rock
-                else if (userChoice === "rock") {
-                    if (computerChoice === "scissors") {
-                        userWins = userWins + 1;
-                        resultBox.textContent = "You win! Rock beats Scissors.";
-                    } else {
-                        computerWins = computerWins + 1;
-                        resultBox.textContent = "Computer wins! Paper beats Rock.";
-                    }
                 }
-                //user chooses paper
-                else if (userChoice === "paper") {
-                    if (computerChoice === "rock") {
-                        userWins = userWins + 1;
-                        resultBox.textContent = "You win! Paper beats Rock.";
-                    } else {
-                        computerWins = computerWins + 1;
-                        resultBox.textContent = "Computer wins! Scissors beats Paper.";
-                    }
+                // user wins
+                else if (
+                    (userChoice === "rock" && computerChoice === "scissors") ||
+                    (userChoice === "paper" && computerChoice === "rock") ||
+                    (userChoice === "scissors" && computerChoice === "paper")
+                ) {
+                    userWins = userWins + 1;
+                    resultBox.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
                 }
-                //user chooses scissors
-                else if (userChoice === "scissors") {
-                    if (computerChoice === "paper") {
-                        userWins = userWins + 1;
-                        resultBox.textContent = "You win! Scissors beats Paper.";
-                    } else {
-                        computerWins = computerWins + 1;
-                        resultBox.textContent = "Computer wins! Rock beats Scissors.";
-                    }
+                // computer wins
+                else {
+                    computerWins = computerWins + 1;
+                    resultBox.textContent = `Computer wins! ${computerChoice} beats ${userChoice}.`;
                 }
 
                 updateProgressBars();
@@ -121,7 +81,7 @@ function playRound(userChoice) {
                 } else {endGame();}
 
             }, 400); // computer shake in milliseconds (0.4 sec)
-        } 200) //delay after player shake for computer (0.2 sec)
+        }, 200); //delay after player shake for computer (0.2 sec)
     }, 400); // player shake (0.4 sec)
 }
 
