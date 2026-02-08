@@ -3,7 +3,21 @@ const nameInput = document.getElementById("nameInput");
 const playerName = document.getElementById("player1-name");
 const popup = document.getElementById("popup-overlay");
 
+const resetBtn = document.getElementById("resetBtn");
+const choiceBtns = document.querySelectorAll(".choice-btn");
+
+const playerMoveImg = document.getElementById("player1-move");
+const computerMoveImg = document.getElementById("computer-move");
+const resultBox = document.getElementById("resultBox");
+
+// game variables //
+let roundNumber = 1;
+let userWins = 0;
+let computerWins = 0;
+let choices = ["rock", "paper", "scissors"];
+
 startBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", startGame);
 
 //popup - change name to name or leave as player1 if user doesnt put anything //
 function startGame() {
@@ -13,21 +27,29 @@ function startGame() {
     } else {
         playerName.textContent = "Player 1";
     }
+
     popup.style.display = "none";
+
+    //reset game //
+    roundNumber=1;
+    userWins=0;
+    computerWins=0;
+    playerMoveImg.src="";
+    computerMoveImg.src="";
     resultBox.textContent = "Make your choice!";
+
+    // make each button work again + hide reset button //
+    document.getElementById("rockBtn").disabled = false;
+    document.getElementById("paperBtn").disabled = false;
+    document.getElementById("scissorsBtn").disabled = false;
+    document.getElementById("resetBtn").style.display= "none";
 }
 
-//game stuff //
-let roundNumber = 1;
-let userWins = 0;
-let computerWins = 0;
 
-// rock0, paper1, scissors2 //
-let choices = ["rock", "paper", "scissors"];
 
-const playerMoveImg = document.getElementById("player1-move");
-const computerMoveImg = document.getElementById("computer-move");
-const resultBox = document.getElementById("resultBox");
+
+
+
 
 function playRound(userChoice) {
 
@@ -74,7 +96,7 @@ function playRound(userChoice) {
             resultBox.textContent = "Computer wins! Rock beats Scissors.";
         }
     }
-    
+
     // says round number and ends game after 5 rounds //
     roundNumber = roundNumber + 1;
     if (roundNumber <= 5) {resultBox.textContent = resultBox.textContent + " | Round " + roundNumber + " of 5";}
