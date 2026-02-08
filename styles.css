@@ -92,8 +92,9 @@ body {
 
 /* MOVE IMAGES */
 .player-move {
-    width: 100px;
+    width: 160px;
     margin-top: 15px;
+    transition: transform 0.15s ease;
 }
 
 /* SHAKE ANIMATION */
