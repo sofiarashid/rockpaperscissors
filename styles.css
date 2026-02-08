@@ -23,16 +23,16 @@ body {
 
 /* ===== POPUP CARD (animated) ===== */
 .popup {
-    background-color: #2D1151;
+    background-color: #3B0F6F;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    border: 2px solid #5e2b97;
+    border: 2px solid #B06AF5;
     color: white;
 
     box-shadow:
-        0 0 10px #7b3fe4,
-        0 0 20px #7b3fe4;
+        0 0 10px #8F4BFF,
+        0 0 20px #8F4BFF;
     animation: glowPulse 2s infinite ease-in-out;
 }
 
@@ -42,14 +42,14 @@ body {
     border-radius: 8px;
     border: none;
     outline: none;
-    background-color: #1b0b33;
+    background-color: #2A0E4F;
     color: white;
     font-size: 16px;
     width: 80%;
 }
 
 .popup input::placeholder {
-    color: #cdb8ff;
+    color: #E6D6FF;
 }
 
 /* popup button */
@@ -58,7 +58,7 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
-    background-color: #5e2b97;
+    background-color: #B06AF5;
     color: white;
     font-family: "Dela Gothic One", sans-serif;
     cursor: pointer;
@@ -68,49 +68,48 @@ body {
 @keyframes glowPulse {
     0% {
         box-shadow:
-            0 0 10px #7b3fe4,
-            0 0 20px #7b3fe4;
+            0 0 10px #8F4BFF,
+            0 0 20px #8F4BFF;
         transform: scale(1);
     }
 
     50% {
         box-shadow:
-            0 0 20px #a66bff,
-            0 0 40px #a66bff;
+            0 0 20px #C08BFF,
+            0 0 40px #C08BFF;
         transform: scale(1.03);
     }
 
     100% {
         box-shadow:
-            0 0 10px #7b3fe4,
-            0 0 20px #7b3fe4;
+            0 0 10px #8F4BFF,
+            0 0 20px #8F4BFF;
         transform: scale(1);
     }
 }
 
 /* ===== MAIN GAME CARD ===== */
 .game {
-    background-color: #2D1151;
+    background-color: #3B0F6F;
     color: white;
     padding: 30px;
     margin: 40px;
 
     border-radius: 20px;
-    border: 2px solid #5e2b97;
+    border: 2px solid #B06AF5;
     box-shadow:
-        0 0 10px #7b3fe4,
-        0 0 20px #7b3fe4;
+        0 0 10px #8F4BFF,
+        0 0 20px #8F4BFF;
 }
 
 /* ===== TITLE CARD ===== */
 .title {
-    background-color: #2D1151;
+    background-color: #3B0F6F;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 15px;
-    border: 2px solid #CA85EB;
+    border: 3px solid #FFEA00;
     text-align: center;
-
 }
 
 /* TITLE TEXT */
@@ -120,7 +119,7 @@ body {
     font-size: 64px;
     font-weight: 900;
     letter-spacing: 1px;
-    color: white;
+    color: #FFEA00;
 }
 
 /* ===== PLAYERS ===== */
@@ -132,7 +131,7 @@ body {
 /* ===== PLAYER BOXES ===== */
 .player-box {
     flex: 1;
-    background-color: #FFD84D;
+    background-color: #FFE600;
     color: black;
     padding: 25px;
     border-radius: 15px;
@@ -153,22 +152,20 @@ body {
     justify-content: space-between;
     margin: 15px 0;
     padding: 10px;
-    background-color: #f5f5f0;
-    /* off-white */
+    background-color: #F2F2F2;
     border-radius: 12px;
 }
 
 .checkpoint {
     width: 18%;
     height: 14px;
-    background-color: #ddd;
+    background-color: #D0D0D0;
     border-radius: 8px;
 }
 
 /* when JS adds this class */
 .checkpoint.active {
-    background-color: #FFD84D;
-    /* gold */
+    background-color: #FFE600;
 }
 
 /* ===== IMAGE / CONTROL AREA ===== */
@@ -187,9 +184,9 @@ body {
 
 /* ===== PLAYER BUTTONS ===== */
 .player-image button {
-    background-color: #2D1151;
-    color: #FFD84D;
-    border: 2px solid #FFD84D;
+    background-color: #3B0F6F;
+    color: #FFE600;
+    border: 2px solid #FFE600;
     border-radius: 10px;
     padding: 10px 14px;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
@@ -200,9 +197,9 @@ body {
 
 .player-image button:hover,
 .player-image button:active {
-    background-color: #FFD84D;
-    color: #2D1151;
-    border: 2px solid #2D1151;
+    background-color: #FFE600;
+    color: #3B0F6F;
+    border: 2px solid #3B0F6F;
 }
 
 /* ===== WINNER BANNER ===== */
@@ -210,7 +207,7 @@ body {
     margin-top: 15px;
     padding: 15px;
     width: 100%;
-    background-color: #FFD84D;
+    background-color: #FFE600;
     color: black;
     border-radius: 15px;
     text-align: center;
@@ -223,7 +220,6 @@ body {
 .player-move {
     width: 120px;
     margin-top: 15px;
-
 }
 
 /* SHAKE ANIMATION */
@@ -231,10 +227,6 @@ body {
     0% {
         transform: translateY(0);
     }
-
-
-
-
 
     25% {
         transform: translateY(-10px);
