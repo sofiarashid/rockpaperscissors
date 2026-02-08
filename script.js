@@ -17,7 +17,7 @@ let computerWins = 0;
 let choices = ["rock", "paper", "scissors"];
 
 startBtn.addEventListener("click", startGame);
-resetBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", resetGame);
 
 //popup - change name to name or leave as player1 if user doesnt put anything //
 function startGame() {
@@ -36,7 +36,7 @@ function startGame() {
     computerWins=0;
     playerMoveImg.src="rock1.png";
     computerMoveImg.src="rock2.png";
-    resultBox.textContent = "Make your choice!";
+    resultBox.textContent = "Make your choice! Round 1 of 5";
 
     // make each button work again + hide reset button //
     document.getElementById("rockBtn").disabled = false;
@@ -51,7 +51,10 @@ function startGame() {
 
 
 function playRound(userChoice) {
-    if (roundNumber > 5) { return; }
+    if (roundNumber > 5) {
+        resultBox.textContent = "Game over. Press Reset.";
+        return;
+    }
     let computerNumber = Math.floor(Math.random() * 3);
     let computerChoice = choices[computerNumber];
 
@@ -118,8 +121,8 @@ function playRound(userChoice) {
                 } else {endGame();}
 
             }, 400); // computer shake in milliseconds (0.4 sec)
-        }
-    }, 400); // player shake
+        } 200) //delay after player shake for computer (0.2 sec)
+    }, 400); // player shake (0.4 sec)
 }
 
 
@@ -139,6 +142,13 @@ function endGame() {
             "Final Score: " + playerName.textContent + " " + userWins +
             ", Computer " + computerWins + ". It's a tie!";
     }
+
+    //disable rps buttons
+    document.getElementById("rockBtn").disabled = true;
+    document.getElementById("paperBtn").disabled = true;
+    document.getElementById("scissorsBtn").disabled = true;
+    // show reset button
+    resetBtn.style.display = "inline-block";
 }
 
 
@@ -156,4 +166,29 @@ function updateProgressBars() {
     computerCheckpoints.forEach((cp, i) => {
         cp.classList.toggle("active", i < computerWins);
     });
+}
+
+
+
+function resetGame() {
+    // reset round number and wins
+    roundNumber = 1;
+    userWins = 0;
+    computerWins = 0;
+
+    // reset imgs and text box
+    playerMoveImg.src = "rock1.png";
+    computerMoveImg.src = "rock2.png";
+    resultBox.textContent = "Make your choice! Round 1 of 5";
+
+    // make rps buttons work
+    document.getElementById("rockBtn").disabled = false;
+    document.getElementById("paperBtn").disabled = false;
+    document.getElementById("scissorsBtn").disabled = false;
+
+    // hide reset button
+    resetBtn.style.display = "none";
+
+    // reset progress bars
+    updateProgressBars();
 }
