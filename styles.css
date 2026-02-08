@@ -1,125 +1,71 @@
 body {
-    background-color: black;
-    margin: 0;
     font-family: Arial, sans-serif;
+    background: #f2f2f2;
 }
 
-/* POPUP */
-#popup-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-}
-
-.popup {
-    background: #2D1151;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    color: white;
-}
-
-/* MAIN GAME */
 .game {
-    background: #2D1151;
-    margin: 40px;
-    padding: 30px;
-    border-radius: 20px;
-    color: white;
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .players {
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
 
-/* PLAYER BOX */
 .player-box {
-    flex: 1;
-    background: #FFD84D;
-    color: black;
-    padding: 20px;
-    border-radius: 15px;
+    width: 45%;
     text-align: center;
-    font-size: 24px;
+}
+
+.player-name {
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* PROGRESS BAR */
-.progress-bar {
-    display: flex;
-    gap: 6px;
-    margin: 15px 0;
+.player-move {
+    width: 150px;
+    margin-top: 10px;
 }
 
-.checkpoint {
-    flex: 1;
-    height: 12px;
-    background: #ddd;
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#resultBox {
+    background-color: #FFD700;
+    color: #2D1151;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    margin-top: 20px;
     border-radius: 6px;
 }
 
-/* BUTTONS */
-.player-image {
-    margin: 15px 0;
+/* Popup */
+#popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.player-image button {
-    background: #2D1151;
-    color: #FFD84D;
-    border: 2px solid #FFD84D;
-    padding: 18px 28px;
-    font-size: 20px;
-    border-radius: 14px;
-    cursor: pointer;
-    margin: 0 8px;
-    font-weight: 700;
-    transition: transform 0.15s ease;
-}
-
-.player-image button:hover {
-    transform: scale(1.08);
-}
-
-/* MOVE IMAGES */
-.player-move {
-    width: 160px;
-    margin-top: 15px;
-    transition: transform 0.15s ease;
-}
-
-/* SHAKE ANIMATION */
-@keyframes shake {
-    0% {
-        transform: translateY(0);
-    }
-
-    25% {
-        transform: translateY(-10px);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
-
-    75% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.shake {
-    animation: shake 0.4s ease-in-out;
+.popup {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
 }

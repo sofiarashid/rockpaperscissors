@@ -21,6 +21,7 @@
     </div>
 
     <div class="game">
+
         <div class="title">
             <h1>Rock Paper Scissors Game</h1>
         </div>
@@ -40,18 +41,17 @@
                 </div>
 
                 <div class="player-image">
-                    <button onclick="playerMove('rock')">ROCK</button>
-                    <button onclick="playerMove('paper')">PAPER</button>
-                    <button onclick="playerMove('scissors')">SCISSORS</button>
+                    <button onclick="playRound('rock')">ROCK</button>
+                    <button onclick="playRound('paper')">PAPER</button>
+                    <button onclick="playRound('scissors')">SCISSORS</button>
                 </div>
 
-                <!-- Player move image -->
                 <img src="rock1.png" class="player-move" id="player1-move">
             </div>
 
             <!-- COMPUTER -->
             <div class="player-box">
-                Computer
+                <div class="player-name">Computer</div>
 
                 <div class="progress-bar">
                     <div class="checkpoint"></div>
@@ -61,11 +61,13 @@
                     <div class="checkpoint"></div>
                 </div>
 
-                <!-- Computer move image -->
                 <img src="rock2.png" class="player-move" id="computer-move">
             </div>
 
         </div>
+
+        <div id="resultBox">Make your choice!</div>
+
     </div>
 
     <script src="script.js"></script>
