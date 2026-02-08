@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exported from Figma">
     <title>RPS Game</title>
-    <link rel="stylesheet" href="https://use.typekit.net/abcd123.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+    <!-- POPUP -->
     <div id="popup-overlay">
         <div class="popup">
             <h2>Enter Your Name</h2>
@@ -20,20 +20,18 @@
         </div>
     </div>
 
-    <div class="game m-5">
+    <div class="game">
         <div class="title">
-            <h1 class="titlefont">Rock Paper Scissors Game</h1>
+            <h1>Rock Paper Scissors Game</h1>
         </div>
 
         <div class="players">
 
-            <!-- PLAYER 1 -->
-            <div class="player-box" id="player1">
+            <!-- PLAYER -->
+            <div class="player-box">
                 <div class="player-name" id="player1-name">Player 1</div>
 
-
-                <!-- Progress Bar -->
-                <div class="progress-bar" id="player-progress">
+                <div class="progress-bar">
                     <div class="checkpoint"></div>
                     <div class="checkpoint"></div>
                     <div class="checkpoint"></div>
@@ -41,37 +39,21 @@
                     <div class="checkpoint"></div>
                 </div>
 
-                <!-- PLAYER 1 -->
                 <div class="player-image">
                     <button onclick="playerMove('rock')">ROCK</button>
                     <button onclick="playerMove('paper')">PAPER</button>
                     <button onclick="playerMove('scissors')">SCISSORS</button>
                 </div>
 
-                <!-- Add placeholder for selected move -->
-                <img src="rock.png" alt="Player Move" class="player-move" id="player1-move">
-                
-                <!-- COMPUTER -->
-                <div class="player-image computer-image">
-                    <img src="computer.png" alt="img">
-                </div>
-
-                <!-- Add placeholder for computer move -->
-                <img src="rock.png" alt="Computer Move" class="player-move" id="computer-move">
-
-
-                <!-- Winner Banner -->
-                <div class="winner-banner" id="player-wins">
-                    _____ wins!
-                </div>
+                <!-- Player move image -->
+                <img src="rock1.png" class="player-move" id="player1-move">
             </div>
 
             <!-- COMPUTER -->
-            <div class="player-box" id="computer">
+            <div class="player-box">
                 Computer
 
-                <!-- Progress Bar -->
-                <div class="progress-bar" id="computer-progress">
+                <div class="progress-bar">
                     <div class="checkpoint"></div>
                     <div class="checkpoint"></div>
                     <div class="checkpoint"></div>
@@ -79,19 +61,11 @@
                     <div class="checkpoint"></div>
                 </div>
 
-                <!-- Computer Image Area -->
-                <div class="player-image computer-image">
-                    <img src="computer.png" alt="img">
-                </div>
-
-                <!-- Winner Banner -->
-                <div class="winner-banner" id="computer-wins">
-                    _____ wins!
-                </div>
+                <!-- Computer move image -->
+                <img src="rock2.png" class="player-move" id="computer-move">
             </div>
 
         </div>
-
     </div>
 
     <script src="script.js"></script>
