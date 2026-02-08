@@ -157,27 +157,28 @@ body {
 
 /* ===== IMAGE / CONTROL AREA ===== */
 .player-image {
-    margin: 15px 0;
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    max-width: 150%;
-    height: auto;
-}
-
-/* computer image */
-.computer-image img {
-    max-width: 150%;
-    height: auto;
+    justify-content: space-between;
+    /* Spread buttons evenly */
+    gap: 0;
+    /* Remove gaps */
+    margin: 15px 0;
+    width: 100%;
+    /* Match progress bar width */
 }
 
 /* ===== PLAYER BUTTONS ===== */
 .player-image button {
+    flex: 1;
+    /* Equal width for all buttons */
+    font-size: 20px;
+    /* Bigger font */
+    padding: 15px 0;
+    /* Taller buttons */
+    border-radius: 12px;
+    border: 2px solid #FFE600;
     background-color: #3B0F6F;
     color: #FFE600;
-    border: 2px solid #FFE600;
-    border-radius: 10px;
-    padding: 10px 14px;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     font-weight: 700;
     cursor: pointer;
@@ -189,6 +190,21 @@ body {
     background-color: #FFE600;
     color: #3B0F6F;
     border: 2px solid #3B0F6F;
+}
+
+/* ===== PLAYER & COMPUTER MOVES / IMAGES ===== */
+.player-move,
+.computer-image img {
+    max-width: 200px;
+    /* Bigger images */
+    height: auto;
+    margin-top: 15px;
+}
+
+/* computer image */
+.computer-image img {
+    max-width: 200px;
+    height: auto;
 }
 
 /* ===== WINNER BANNER ===== */
