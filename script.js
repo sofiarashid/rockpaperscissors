@@ -31,10 +31,7 @@ const resultBox = document.getElementById("resultBox");
 
 function playRound(userChoice) {
 
-    if (roundNumber > 5) {
-        return;
-    }
-
+    if (roundNumber > 5) {return;}
     let computerNumber = Math.floor(Math.random() * 3);
     let computerChoice = choices[computerNumber];
 
@@ -77,11 +74,11 @@ function playRound(userChoice) {
             resultBox.textContent = "Computer wins! Rock beats Scissors.";
         }
     }
-
+    
+    // says round number and ends game after 5 rounds //
     roundNumber = roundNumber + 1;
-    if (roundNumber === 6) {
-        endGame();
-    }
+    if (roundNumber <= 5) {resultBox.textContent = resultBox.textContent + " | Round " + roundNumber + " of 5";}
+    if (roundNumber > 5) {endGame();}
 }
 
 // end the game - you won or computer won //
