@@ -13,11 +13,12 @@
 <body class="bg-dark text-light">
 
     <!-- POPUP -->
-    <div id="popup-overlay" class="d-flex align-items-center justify-content-center position-fixed w-100 h-100">
-        <div class="popup text-center p-3">
+    <div id="popup-overlay">
+        <div class="popup text-center">
             <h2>Enter Your Name</h2>
-            <input type="text" id="nameInput" class="form-control my-3" placeholder="Your Name">
-            <button id="startBtn" class="btn btn-primary">Start Game</button>
+            <input type="text" id="nameInput" placeholder="Your Name">
+            <br><br>
+            <button id="startBtn">Start Game</button>
         </div>
     </div>
 
@@ -49,9 +50,9 @@
                     </div>
 
                     <div class="player-image d-flex justify-content-center gap-2 flex-wrap my-2">
-                        <button id="rockBtn" onclick="playRound('rock')" class="btn btn-dark">ROCK</button>
-                        <button id="paperBtn" onclick="playRound('paper')" class="btn btn-dark">PAPER</button>
-                        <button id="scissorsBtn" onclick="playRound('scissors')" class="btn btn-dark">SCISSORS</button>
+                        <button id="rockBtn" onclick="playRound('rock')">ROCK</button>
+                        <button id="paperBtn" onclick="playRound('paper')">PAPER</button>
+                        <button id="scissorsBtn" onclick="playRound('scissors')">SCISSORS</button>
                     </div>
 
                     <img src="rock1.png" class="player-move mt-2" id="player1-move">
@@ -80,8 +81,8 @@
         <!-- RESULT -->
         <div class="row mt-3">
             <div class="col-12">
-                <div id="resultBox" class="p-2 text-center"></div>
-                <button id="resetBtn" class="btn btn-warning w-100 mt-2" style="display:none;">Reset Game</button>
+                <div id="resultBox"></div>
+                <button id="resetBtn" class="w-100 mt-2">Reset Game</button>
             </div>
         </div>
 

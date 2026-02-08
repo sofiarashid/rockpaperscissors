@@ -12,13 +12,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: rgba(0, 0, 0, 0.6);
     z-index: 1000;
-    pointer-events: none;
-}
-
-#popup-overlay .popup {
     pointer-events: auto;
 }
 
@@ -26,21 +21,22 @@ body {
 .popup {
     background-color: #3B0F6F;
     padding: 5%;
-    border-radius: 3%;
+    border-radius: 15%;
     text-align: center;
-    border: 0.5% solid #B06AF5;
+    border: 0.3em solid #B06AF5;
     color: white;
-
     box-shadow:
-        0 0 2% #8F4BFF,
-        0 0 4% #8F4BFF;
+        0 0 1em #8F4BFF,
+        0 0 2em #8F4BFF;
     animation: glowPulse 2s infinite ease-in-out;
+    max-width: 400px;
+    width: 90%;
 }
 
-/* popup inputs */
+/* popup input */
 .popup input {
     padding: 1.5%;
-    border-radius: 2%;
+    border-radius: 10%;
     border: none;
     outline: none;
     background-color: #2A0E4F;
@@ -57,7 +53,7 @@ body {
 .popup button {
     margin-top: 2%;
     padding: 1.5% 4%;
-    border-radius: 2%;
+    border-radius: 10%;
     border: none;
     background-color: #B06AF5;
     color: white;
@@ -65,20 +61,20 @@ body {
     cursor: pointer;
 }
 
-/* ===== POPUP GLOW ANIMATION ===== */
+/* ===== POPUP ANIMATION ===== */
 @keyframes glowPulse {
     0% {
-        box-shadow: 0 0 2% #8F4BFF, 0 0 4% #8F4BFF;
+        box-shadow: 0 0 1em #8F4BFF, 0 0 2em #8F4BFF;
         transform: scale(1);
     }
 
     50% {
-        box-shadow: 0 0 4% #C08BFF, 0 0 8% #C08BFF;
+        box-shadow: 0 0 2em #C08BFF, 0 0 4em #C08BFF;
         transform: scale(1.03);
     }
 
     100% {
-        box-shadow: 0 0 2% #8F4BFF, 0 0 4% #8F4BFF;
+        box-shadow: 0 0 1em #8F4BFF, 0 0 2em #8F4BFF;
         transform: scale(1);
     }
 }
@@ -89,20 +85,20 @@ body {
     color: white;
     padding: 5%;
     margin: 5%;
-    border-radius: 3%;
-    border: 0.5% solid #B06AF5;
+    border-radius: 15%;
+    border: 0.3em solid #B06AF5;
     box-shadow:
-        0 0 2% #8F4BFF,
-        0 0 4% #8F4BFF;
+        0 0 1em #8F4BFF,
+        0 0 2em #8F4BFF;
 }
 
-/* ===== TITLE CARD ===== */
+/* ===== TITLE ===== */
 .title {
     background-color: #3B0F6F;
     padding: 3%;
     margin-bottom: 4%;
-    border-radius: 3%;
-    border: 0.7% solid #FFEA00;
+    border-radius: 10%;
+    border: 0.4em solid #FFEA00;
     text-align: center;
 }
 
@@ -121,13 +117,11 @@ body {
     background-color: #FFE600;
     color: black;
     padding: 4%;
-    border-radius: 3%;
+    border-radius: 10%;
     text-align: center;
-    position: relative;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     font-size: 1.5em;
     font-weight: 700;
-    border: none;
 }
 
 /* ===== PROGRESS BAR ===== */
@@ -137,14 +131,14 @@ body {
     margin: 2% 0;
     padding: 1%;
     background-color: #fcf9ff;
-    border-radius: 2%;
+    border-radius: 10%;
 }
 
 .checkpoint {
     width: 18%;
     height: 2%;
     background-color: #3c0f6f4b;
-    border-radius: 2%;
+    border-radius: 10%;
 }
 
 /* active checkpoint */
@@ -165,10 +159,9 @@ body {
 .player-image button {
     background-color: #3B0F6F;
     color: #FFE600;
-    border: 0.3% solid #FFE600;
-    border-radius: 2%;
+    border: 0.2em solid #FFE600;
+    border-radius: 10%;
     padding: 1% 2%;
-    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -178,7 +171,7 @@ body {
 .player-image button:active {
     background-color: #FFE600;
     color: #3B0F6F;
-    border: 0.3% solid #3B0F6F;
+    border: 0.2em solid #3B0F6F;
 }
 
 /* ===== PLAYER MOVE IMAGE ===== */
@@ -214,22 +207,20 @@ body {
     animation: shake 0.4s ease-in-out;
 }
 
-/* ===== RESULT / WINNER BOX ===== */
-#winnerBox,
+/* ===== RESULT BOX ===== */
 #resultBox {
     margin-top: 2%;
     padding: 2%;
     width: 100%;
-    box-sizing: border-box;
     background-color: #FFE600;
     color: #3B0F6F;
-    border-radius: 3%;
+    border-radius: 10%;
     text-align: center;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     font-size: 1.2em;
     font-weight: 700;
-    border: 0.3% solid #3B0F6F;
-    box-shadow: 0 0 2% #FFE600;
+    border: 0.2em solid #3B0F6F;
+    box-shadow: 0 0 1em #FFE600;
     overflow-wrap: break-word;
 }
 
@@ -238,18 +229,16 @@ body {
     margin-top: 2%;
     padding: 2%;
     width: 100%;
-    box-sizing: border-box;
     background-color: #FFE600;
     color: #3B0F6F;
-    border-radius: 3%;
+    border-radius: 10%;
     text-align: center;
     font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     font-size: 1.2em;
     font-weight: 700;
-    border: 0.3% solid #3B0F6F;
-    box-shadow: 0 0 2% #FFE600;
+    border: 0.2em solid #3B0F6F;
+    box-shadow: 0 0 1em #FFE600;
     cursor: pointer;
-    overflow-wrap: break-word;
     transition: all 0.2s ease;
 }
 
