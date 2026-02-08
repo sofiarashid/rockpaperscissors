@@ -159,22 +159,16 @@ body {
 .player-image {
     display: flex;
     justify-content: space-between;
-    /* Spread buttons evenly */
     gap: 0;
-    /* Remove gaps */
-    margin: 15px 0;
+    margin: 10px;
     width: 100%;
-    /* Match progress bar width */
 }
 
 /* ===== PLAYER BUTTONS ===== */
 .player-image button {
     flex: 1;
-    /* Equal width for all buttons */
-    font-size: 20px;
-    /* Bigger font */
+    font-size: 25px;
     padding: 15px 0;
-    /* Taller buttons */
     border-radius: 12px;
     border: 2px solid #FFE600;
     background-color: #3B0F6F;
@@ -195,16 +189,10 @@ body {
 /* ===== PLAYER & COMPUTER MOVES / IMAGES ===== */
 .player-move,
 .computer-image img {
-    max-width: 200px;
-    /* Bigger images */
+    max-width: 100%;
     height: auto;
-    margin-top: 15px;
-}
-
-/* computer image */
-.computer-image img {
-    max-width: 200px;
-    height: auto;
+    display: block;
+    margin: 20px auto 0 auto;
 }
 
 /* ===== WINNER BANNER ===== */
