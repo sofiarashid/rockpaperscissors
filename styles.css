@@ -265,3 +265,27 @@ body {
     box-shadow: 0 0 10px #FFE600;
     overflow-wrap: break-word;
 }
+
+#resetBtn {
+    margin-top: 15px;
+    /* Space above the button */
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFE600;
+    color: #3B0F6F;
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    border: 3px solid #3B0F6F;
+    box-shadow: 0 0 10px #FFE600;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    transition: all 0.2s ease;
+}
+
+#resetBtn:hover {
+    background-color: #FFD633;
+}
