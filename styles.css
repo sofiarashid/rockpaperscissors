@@ -161,11 +161,13 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
+    max-width: 150%;
+    height: auto;
 }
 
 /* computer image */
 .computer-image img {
-    max-width: 100%;
+    max-width: 150%;
     height: auto;
 }
 
