@@ -118,7 +118,7 @@ function playRound(userChoice) {
                 } else {endGame();}
 
             }, 400); // computer shake in milliseconds (0.4 sec)
-        }, 200); // delay before computer shake
+        }
     }, 400); // player shake
 }
 
